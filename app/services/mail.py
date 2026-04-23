@@ -8,7 +8,7 @@ def send_letter_to_email(name: str, message: str, contacts: str | None = None):
 
 Имя: {name}
 Сообщение: {message}
-Контакты: {contacts if contacts else 'не указаны'}
+Контакты: {contacts}
 """
     msg = MIMEText(text, "plain", "utf-8")
     msg["Subject"] = "Новое письмо"
