@@ -10,5 +10,7 @@ def send_letter_to_telegram(name: str, message: str, contacts: str | None = None
 Контакты: {contacts}
 """
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-    response = requests.post(url, data={"chat_id": TELEGRAM_CHAT_ID, "text": text}, timeout=5)
+    response = requests.post(
+        url, data={"chat_id": TELEGRAM_CHAT_ID, "text": text}, timeout=5
+    )
     response.raise_for_status()
